@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Cookie"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Rock Paper Scissor</h1>
+      <p class="Fwin"></p>
+      <p class="newgame"></p>
+    </header>
+
+    <main class="main">
+      <!-- <img src="" alt="" /><img src="" alt="" /><img src="" alt="" /> -->
+      <div class="img">
+        <button>
+          <img id="img1" src="images/stone.png" height="150px" alt="Rock" />
+        </button>
+        <button>
+          <img id="img2" src="images/paper.png" width="150px" alt="" />
+        </button>
+        <button>
+          <img id="img3" src="images/scissor.png" height="150px" alt="" />
+        </button>
+      </div>
+      <p class="dialogue"></p>
+      <p class="result"></p>
+
+      <div class="score">
+        <p class="Pscore">
+          You: <br />
+          <span class="pscore">0</span>
+        </p>
+        <button class="again">New Game</button>
+        <p class="Cscore">
+          Comp: <br />
+          <span id="cscore" class="cscore">0</span>
+        </p>
+      </div>
+
+      <footer class="footer-distributed">
+        <div class="footer-left">
+          <h3>Tejash Patel</h3>
+          <p class="footer-links">
+            <a href="#">Home</a>
+            ·
+            <a href="#">About</a>
+            ·
+            <a href="#">Contact</a>
+          </p>
+
+          <p class="footer-company-name">Tejash Patel &copy; 2021</p>
+        </div>
+
+        <div class="footer-center">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <p>
+              Gujarat <br />
+              India
+            </p>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <p>+91 7016930134</p>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope"></i>
+            <p>
+              <a href="mailto:pateltejash429@gmail.com"
+                >pateltejash429@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <p class="footer-company-about">
+            <span id="span">About Me</span>
+            Hey I'm a 17 years old student who is a beginner of Front-End
+            devlopment.
+          </p>
+
+          <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/Tejash_ptl_429"
+              ><i class="fa fa-twitter"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/tejash-patel-5141911b6/"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/Tejash429"
+              ><i class="fa fa-github"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

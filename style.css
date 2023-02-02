@@ -78,8 +78,6 @@ body {
 }
 
 #img1 {
-  /* margin-right: 300px; */
-  /* border-radius: 20px; */
   cursor: pointer;
   background-color: #222;
 }
@@ -87,7 +85,6 @@ body {
 #img2 {
   cursor: pointer;
   background-color: #222;
-  /* margin-right: 300px; */
 }
 
 #img3 {

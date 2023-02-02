@@ -1,40 +1,47 @@
 'use strict';
 
 let compnum = Math.trunc(Math.random() * 3) + 1;
-console.log(compnum);
 let Cscore = 0;
 let Pscore = 0;
 let result = '';
 let playing = true;
 
-const displaydialogue = function (diagloue) {
-  document.querySelector('.dialogue').textContent = diagloue;
+const diagloue = document.querySelector('.dialogue');
+const disResult = document.querySelector('.result');
+const compScore = document.querySelector('.cscore');
+const plaScore = document.querySelector('.pscore');
+const stone = document.querySelector('#img1');
+const paper = document.querySelector('#img2');
+const scissors = document.querySelector('#img3');
+const again = document.querySelector('.again');
+const displayfwin = document.querySelector('.Fwin');
+const newgame = document.querySelector('.newgame');
+
+const displaydialogue = function (result) {
+  diagloue.textContent = result;
 };
 
 const displayresult = function (result) {
-  document.querySelector('.result').textContent = result;
+  disResult.textContent = result;
 };
 
-const displayfwin = document.querySelector('.Fwin');
-const newgame = document.querySelector('.newgame');
 // STONE LOGIC
-document.querySelector('#img1').addEventListener('click', function () {
+stone.addEventListener('click', function () {
   compnum = Math.trunc(Math.random() * 3) + 1;
-  console.log(compnum);
   if (playing) {
     if (compnum === 1) {
-      displaydialogue('Computer has choose Rock');
+      displaydialogue('The computer has chosen rock');
       displayresult('Draw');
     } else if (compnum === 2) {
-      displaydialogue('Computer has choose Paper');
+      displaydialogue('The computer has chosen Paper');
       displayresult('You lose');
       Cscore++;
-      document.querySelector('.cscore').textContent = Cscore;
+      compScore.textContent = Cscore;
     } else if (compnum === 3) {
-      displaydialogue('Computer has choose Scissors');
+      displaydialogue('The computer has chosen Scissors');
       displayresult('You Win');
       Pscore++;
-      document.querySelector('.pscore').textContent = Pscore;
+      plaScore.textContent = Pscore;
     }
     if (Cscore >= 15) {
       playing = false;
@@ -42,89 +49,81 @@ document.querySelector('#img1').addEventListener('click', function () {
       newgame.textContent = 'Start a New Game';
     } else if (Pscore >= 15) {
       playing = false;
-      displayfwin.textContent = 'You Scored More';
+      displayfwin.textContent = 'You Won';
       newgame.textContent = 'Start a New Game';
     }
   }
 });
 
 //PAPER LOGIC
-document.querySelector('#img2').addEventListener('click', function () {
+paper.addEventListener('click', function () {
   compnum = Math.trunc(Math.random() * 3) + 1;
-  console.log(compnum);
   if (playing) {
     if (compnum === 1) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Rock';
-      document.querySelector('.result').textContent = 'You Win';
+      diagloue.textContent = 'The computer has chosen rock';
+      disResult.textContent = 'You Win';
       Pscore++;
-      document.querySelector('.pscore').textContent = Pscore;
+      plaScore.textContent = Pscore;
     } else if (compnum === 2) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Paper';
-      document.querySelector('.result').textContent = 'Draw';
+      diagloue.textContent = 'The computer has chosen Paper';
+      disResult.textContent = 'Draw';
     } else if (compnum === 3) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Scissors';
-      document.querySelector('.result').textContent = 'You lose';
+      diagloue.textContent = 'The computer has chosen Scissors';
+      disResult.textContent = 'You lose';
       Cscore++;
-      document.querySelector('.cscore').textContent = Cscore;
+      compScore.textContent = Cscore;
     }
     if (Cscore >= 15) {
       playing = false;
-      displayfwin.textContent = 'Computer Scored More.';
+      displayfwin.textContent = 'Computer Won.';
       newgame.textContent = 'Start a New Game';
     } else if (Pscore >= 15) {
       playing = false;
-      displayfwin.textContent = 'You Scored More';
+      displayfwin.textContent = 'You Won';
       newgame.textContent = 'Start a New Game';
     }
   }
 });
 
 //SICCORS LOGIC
-document.querySelector('#img3').addEventListener('click', function () {
+scissors.addEventListener('click', function () {
   compnum = Math.trunc(Math.random() * 3) + 1;
-  console.log(compnum);
   if (playing) {
     if (compnum === 1) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Rock';
-      document.querySelector('.result').textContent = 'You lose';
+      diagloue.textContent = 'The computer has chosen rock';
+      disResult.textContent = 'You lose';
       Cscore++;
-      document.querySelector('.cscore').textContent = Cscore;
+      compScore.textContent = Cscore;
     } else if (compnum === 2) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Paper';
-      document.querySelector('.result').textContent = 'You Win';
+      diagloue.textContent = 'The computer has chosen Paper';
+      disResult.textContent = 'You Win';
       Pscore++;
-      document.querySelector('.pscore').textContent = Pscore;
+      plaScore.textContent = Pscore;
     } else if (compnum === 3) {
-      document.querySelector('.dialogue').textContent =
-        'Computer has choose Scissors';
-      document.querySelector('.result').textContent = 'Draw';
+      diagloue.textContent = 'The computer has chosen Scissors';
+      disResult.textContent = 'Draw';
     }
     if (Cscore >= 15) {
       playing = false;
-      displayfwin.textContent = 'Computer Scored More.';
+      displayfwin.textContent = 'Computer Won.';
       newgame.textContent = 'Start a New Game';
     } else if (Pscore >= 15) {
       playing = false;
-      displayfwin.textContent = 'You Scored More';
+      displayfwin.textContent = 'You Won';
       newgame.textContent = 'Start a New Game';
     }
   }
 });
 
 //AGAIN LOGIC
-document.querySelector('.again').addEventListener('click', function () {
+again.addEventListener('click', function () {
   Cscore = 0;
   Pscore = 0;
   playing = true;
-  document.querySelector('.pscore').textContent = Pscore;
-  document.querySelector('.cscore').textContent = Cscore;
-  document.querySelector('.result').textContent = '';
-  document.querySelector('.dialogue').textContent = '';
+  plaScore.textContent = Pscore;
+  compScore.textContent = Cscore;
+  disResult.textContent = '';
+  diagloue.textContent = '';
   displayfwin.textContent = '';
   newgame.textContent = '';
 });
